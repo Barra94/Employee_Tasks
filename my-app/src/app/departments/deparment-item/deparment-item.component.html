@@ -1,0 +1,8 @@
+<li class="list-group-item text-capitalize" style="cursor:pointer">
+  {{department.name}}
+  {{department.building}}
+  <div class="float-right">
+    <i class="fa fa-trash trash margin-left" (click)="onDeleteDepartment(department)"></i>
+    <i class="fa fa-edit margin-left" (click)="onUpdateDepartment(department)"></i>
+  </div>
+</li>

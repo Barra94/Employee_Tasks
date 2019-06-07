@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-sm-12">
+    <hr>
+      <div class="card">
+          <div class="card-header">
+            Task Details
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{selectedTask.name}}</h5>
+            <p class="card-text">Department: {{getDepartmentOfTask(selectedTask).name}}.</p>
+            <p class="card-text">Employees working on this task.</p>
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let employee_id of selectedTask.employees"> {{getEmployeeById(employee_id).first_name}} {{getEmployeeById(employee_id).last_name}}</li>
+            </ul>
+          </div>
+        </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+  <div class="row">
+    <div class="col-sm-12">
+        <hr>
+        <div class="card">
+            <div class="card-header">
+              Add Department
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-6">
+                      <label for="name2">Name:</label>
+                      <input type="text" class="form-control" id="name2" [(ngModel)]="departmentName" name="name2">
+                    </div>
+                    <div class="col-sm-6">
+                      <label for="buidling2">Building:</label>
+                      <input type="text" class="form-control" id="buidling2" [(ngModel)]="departmentBuilding" name="building2">
+                    </div>
+                    <div class="col-sm-6">
+                        <button class="btn btn-success" type="button" (click)="onCreateDepartment()">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>

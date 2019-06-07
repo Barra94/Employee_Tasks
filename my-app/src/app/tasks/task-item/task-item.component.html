@@ -1,0 +1,7 @@
+<li class="list-group-item text-capitalize" style="cursor:pointer"  >
+  <span [ngClass]="{'line-through': task.done_status}">{{task.name}}</span>
+  <div class="float-right">
+      <i class="fa fa-trash trash margin-left" (click)="onDeleteTask(task)"></i>
+      <i class="fa fa-edit margin-left" ></i>
+</div>
+</li>

@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-sm-12">
+      <hr>
+      <div class="card">
+          <div class="card-header">
+            Employee Update
+          </div>
+          <div class="card-body">
+              <h5 class="card-title">{{selectedEmployee.first_name}} {{selectedEmployee.last_name}}</h5>
+              <form method="GET" action="#">
+                  <div class="row" *ngIf="(selectedEmployee !== undefined)">
+                      <div class="col-md-12 col-lg-6 form-group"> 
+                          <label for="firstName">FirstName:</label>
+                          <input type="text" class="form-control" id="firstName" [(ngModel)]="selectedEmployee.first_name" name="firstName">
+                      </div>
+                      <div class="col-md-12 col-lg-6 form-group">
+                          <label for="LastName">LastName</label>
+                          <input type="text" class="form-control" id="LastName" [(ngModel)]="selectedEmployee.last_name" name ="LastName">
+                      </div>
+                      <div class="col-md-12 col-lg-6 form-group">
+                          <label for="DateofBirth">DateofBirth</label>
+                          <input type="date" class="form-control" id="DateofBirth" [(ngModel)]="selectedEmployee.birth_date" name ="DateofBirth">
+                      </div>
+                      <div class="col-md-12 col-lg-6 form-group">
+                          <label for="Department">Department</label>
+                          <select class="form-control" id="Department" [(ngModel)]="selectedEmployee.department_id" name="department_id">
+                            <option *ngFor="let department of departments" [ngValue]="department.id" [selected]="department.id === selectedEmployee.department_id">{{department.name}}</option>
+                        </select>
+                        <input type="button" class="btn btn-primary" (click)="OnUpdateEmployee()" value="update"> 
+                      </div>
+                  </div>
+                </form>
+          </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col-sm-12">
+        <hr>
+        <div class="card">
+            <div class="card-header">
+              Add Employee
+            </div>
+            <div class="card-body">
+                <form method="GET" action="#">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-6 form-group"> 
+                            <label for="firstName">FirstName:</label>
+                            <input type="text" class="form-control" id="firstName" [(ngModel)]="first_name" name="firstName">
+                        </div>
+                        <div class="col-md-12 col-lg-6 form-group">
+                            <label for="LastName">LastName</label>
+                            <input type="text" class="form-control" id="LastName" [(ngModel)]="last_name" name ="LastName">
+                        </div>
+                        <div class="col-md-12 col-lg-6 form-group">
+                            <label for="DateofBirth">DateofBirth</label>
+                            <input type="date" class="form-control" id="DateofBirth" [(ngModel)]="birthday" name ="DateofBirth">
+                        </div>
+                        <div class="col-md-12 col-lg-6 form-group">
+                            <label for="Department">Department</label>
+                            <select class="form-control" id="Department" [(ngModel)]="department_id" name="department_id">
+                              <option *ngFor="let department of departments" [ngValue]="department.id">{{department.name}}</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-12">
+                            <button class="btn btn-success" type="button" (click)="onAddEmployee()">Add</button>
+                        </div>
+                    </div>
+
+                  </form>
+            </div>
+        </div>
+    </div>
+  </div>

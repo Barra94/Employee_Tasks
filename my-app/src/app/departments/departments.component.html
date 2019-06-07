@@ -1,0 +1,24 @@
+
+<button type="button" class="btn btn-outline-primary" (click)="onAddClicked()">Add department</button>
+<hr>
+
+<app-search-departments></app-search-departments>
+
+<hr>
+
+<div class="row">
+  <div class="col-sm-12" >
+    <ul class="list-group" >
+      <app-deparment-item *ngFor="let department of departments" (click)="onSelectDepartment(department)" [department]="department" (onUpdateDepartmentClicked)="onUpdateSelected(departmentEl)"></app-deparment-item>
+    </ul>
+  </div>
+</div>
+
+
+<app-department-details *ngIf="(selectedDepartment !== undefined)" [selectedDepartment]="selectedDepartment"></app-department-details>
+
+<app-department-update *ngIf="(selectedDepartment !== undefined) && showUpdate" [selectedDepartment]="selectedDepartment" (CloseSelect)="UpdateCloseClicked()"></app-department-update>
+
+
+<app-add-department *ngIf="showAdd"></app-add-department>
+

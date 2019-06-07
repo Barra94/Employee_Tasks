@@ -1,0 +1,21 @@
+<button type="button" class="btn btn-outline-primary" (click)="onAddClicked()">Add Employee</button>
+<hr>
+<app-employee-search>
+  <hr>
+</app-employee-search>
+<hr>
+<div class="row">
+  <div class="col-sm-12" >
+    <ul class="list-group">
+     <app-employee-item *ngFor="let employee of getlistOfEmployees()" (click)="onSelectEmployee(employee)" [employee]="employee" (onUpdateClicked)="onUpdateSelected(employeeEl)"></app-employee-item>
+    </ul>
+  </div>
+</div>
+
+
+<app-mployee-update *ngIf="(selectedEmployee !== undefined) && showUpdate" [selectedEmployee]="selectedEmployee"></app-mployee-update>
+
+<app-employee-details *ngIf="(selectedEmployee !== undefined)" [selectedEmployee]="selectedEmployee"></app-employee-details>
+
+<app-add-employee *ngIf="showAdd"></app-add-employee>
+

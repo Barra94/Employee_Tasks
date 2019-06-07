@@ -1,0 +1,7 @@
+<li class="list-group-item text-capitalize" style="cursor:pointer" >
+    <span class="col-md-12">{{employee.first_name}} {{employee.last_name}}</span>
+    <div class="float-right">
+            <i class="fa fa-trash trash margin-left" (click)="onDeleteEmployee(employee)"></i>
+            <i class="fa fa-edit margin-left" (click)="onUpdateEmployee(employee)"></i>
+    </div>
+</li>
